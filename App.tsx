@@ -23,6 +23,9 @@ export class App extends React.PureComponent<{}, AppState> {
     }
 
     hideArr: Ticket[] = [];
+    hideTicket = (ticket: Ticket) => {
+        this.hideArr.push(ticket);
+    };
 
     renderTickets = (tickets: Ticket[]) => {
         const filteredTickets = tickets.filter((t) =>
@@ -63,9 +66,7 @@ export class App extends React.PureComponent<{}, AppState> {
         }, 300);
     };
 
-    hideTicket = (ticket: Ticket) => {
-        this.hideArr.push(ticket);
-    };
+    
 
     render() {
         const { tickets } = this.state;
